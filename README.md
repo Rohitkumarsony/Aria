@@ -24,7 +24,7 @@ A production-grade conversational AI chatbot with document Q&A (RAG), real-time 
 ```bash
 # 1. Clone and set up
 git clone https://github.com/Rohitkumarsony/Aria.git
-cd aria2
+cd aria
 python -m venv venv && source venv/bin/activate
 
 # 2. Install dependencies
@@ -48,7 +48,7 @@ uvicorn main:app --reload
 ## Project Structure
 
 ```
-aria2/
+aria/
 │
 ├── main.py                          # FastAPI app factory + lifespan startup
 ├── requirements.txt
