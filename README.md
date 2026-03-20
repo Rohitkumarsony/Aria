@@ -1,6 +1,6 @@
 # Aria — AI Research Assistant
 
-A production-grade conversational AI chatbot with document Q&A (RAG), real-time web search, LangGraph agent, persistent session history, and a GPT-style single-page frontend.
+A production-grade conversational AI chatbot with document Q&A (RAG), real-time web search, LangGraph agent, persistent session history, and a Chatbot-style single-page frontend.
 
 ---
 
@@ -367,3 +367,19 @@ Without it, every question injects whatever ChromaDB returns regardless of relev
 
 **Safe AST calculator vs eval()**
 Python eval() would execute arbitrary code. The AST walker only permits whitelisted node types. `__import__('os').system('rm -rf /')` is rejected at parse time.
+
+
+![Alt text](./images/landing_page.png)
+![Alt text](./images/input_field.png)
+![Alt text](./images/tool_using.png)
+![Alt text](./images/qa.png)
+![Alt text](./images/metadata.png)
+![Alt text](./images/calling_web_tool.png)
+![Alt text](./images/web_result.png)
+![Alt text](./images/follow-up.png)
+
+
+
+
+
+
