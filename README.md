@@ -5,7 +5,7 @@ A production-grade conversational AI chatbot with document Q&A (RAG), real-time 
 ![Alt text](./images/landing_page.png)
 
 Realtime notify when document uploading
-![alt text](image.png)
+![alt text](images/realtimenotify_processing_page.png)
 ---
 
 ## Table of Contents
