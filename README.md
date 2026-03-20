@@ -23,7 +23,7 @@ A production-grade conversational AI chatbot with document Q&A (RAG), real-time 
 
 ```bash
 # 1. Clone and set up
-git clone <repo-url>
+git clone https://github.com/Rohitkumarsony/Aria.git
 cd aria2
 python -m venv venv && source venv/bin/activate
 
@@ -38,7 +38,7 @@ cp .env.example .env
 # Edit .env — add your API keys
 
 # 5. Run
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --reload
 
 # Open http://localhost:8000
 ```

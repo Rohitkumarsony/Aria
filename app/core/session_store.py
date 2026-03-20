@@ -1,20 +1,3 @@
-"""
-SessionStore — persists chat history to disk as JSON files.
-
-Layout:
-  sessions/
-    {session_id}.json   ← one file per session
-      {
-        "session_id": "...",
-        "title": "First user message (truncated)",
-        "created_at": "ISO timestamp",
-        "updated_at": "ISO timestamp",
-        "messages": [
-          {"role": "user"|"assistant", "content": "...", "ts": "ISO"}
-        ]
-      }
-"""
-
 import json
 import os
 from datetime import datetime, timezone

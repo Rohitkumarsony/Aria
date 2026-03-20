@@ -1,9 +1,3 @@
-"""
-RAGAgent — production streaming agent.
-Intent is classified by the LLM itself — no hardcoded keyword lists.
-The model decides when to use tools based on the system prompt.
-"""
-
 from __future__ import annotations
 import json
 import uuid

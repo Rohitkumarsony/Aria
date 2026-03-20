@@ -1,31 +1,3 @@
-"""
-WebSocket API  ws://{host}/ws/{session_id}
-
-Client → Server:
-  { type: "ping" }
-  { type: "chat",          message: "..." }
-  { type: "upload",        filename: "x.pdf", data: "<base64>" }
-  { type: "sessions_list" }
-  { type: "session_load",   session_id: "..." }
-  { type: "session_delete", session_id: "..." }
-  { type: "status" }
-
-Server → Client events:
-  pong
-  status              { total_chunks }
-  searching_web       { query }           ← fires when web_search tool actually executes
-  chat_token          { token }
-  chat_done           { confidence, verdict }
-  chat_error          { detail }
-  upload_start        { filename, total_pages, has_ocr, message }
-  page_done           { page, total_pages, pct, used_ocr }
-  upload_complete     { filename, total_chunks, doc_id }
-  upload_error        { detail }
-  sessions_list       { sessions: [...] }
-  session_history     { session_id, messages: [...] }
-  session_deleted     { session_id }
-"""
-
 import asyncio
 import base64
 import json
