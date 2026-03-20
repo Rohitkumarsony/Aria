@@ -2,6 +2,8 @@
 
 A production-grade conversational AI chatbot with document Q&A (RAG), real-time web search, LangGraph agent, persistent session history, and a Chatbot-style single-page frontend.
 
+![Alt text](./images/landing_page.png)
+
 ---
 
 ## Table of Contents
@@ -135,6 +137,7 @@ Browser (WebSocket ws://host/ws/main)
 
 ### FastAPI
 **Why:** Async-native Python framework with built-in WebSocket support. Pydantic integration gives automatic request validation. Handles concurrent LLM streaming, embedding calls, and web fetches without blocking.
+![Alt text](./images/input_field.png)
 
 ### WebSocket (pure — no HTTP for chat/upload)
 **Why:** HTTP request-response is wrong for streaming AI. WebSocket gives:
@@ -204,6 +207,7 @@ Rank 3: skills      Rank 3: reach out
               │
         Top 4 chunks → injected as LLM context
 ```
+![Alt text](./images/metadata.png)
 
 ### RRF Formula
 
@@ -216,6 +220,8 @@ RRF_score = Σ  1 / (k + rank)    where k = 60
 ### Relevance Threshold (score ≥ 0.30)
 
 Without this, every query injects whatever ChromaDB returns — even a 0.05 similarity score. Threshold = 0.30 means: if retrieved chunks aren't genuinely related to the query, the query gets sent to the LLM without document context. The LLM then uses its own knowledge or calls `web_search` instead of hallucinating from an irrelevant document section.
+
+![Alt text](./images/calling_web_tool.png)
 
 ---
 
@@ -259,6 +265,7 @@ LLM evaluates with system prompt — decides independently:
             ("hi", "thanks", "nice", "lol")
             → LLM responds naturally, no tools
 ```
+![Alt text](./images/web_result.png)
 
 ### Why the LLM decides (not keyword rules)
 
@@ -271,6 +278,7 @@ Hardcoded rules (`if "news" in query: search`) break constantly. "What's new in 
 **Endpoint:** `ws://localhost:8000/ws/main`
 
 Single persistent connection. Session ID travels inside each message — no URL changes, no reconnects.
+![Alt text](./images/follow-up.png)
 
 ### Client → Server
 
@@ -305,6 +313,7 @@ Single persistent connection. Session ID travels inside each message — no URL 
 { "event": "chat_done",       "confidence": "high", "verdict": "Accurate web search result." }
 { "event": "chat_error",      "detail": "Tool error: ..." }
 ```
+![Alt text](./images/tool_using.png)
 
 ---
 
@@ -369,17 +378,11 @@ Without it, every question injects whatever ChromaDB returns regardless of relev
 Python eval() would execute arbitrary code. The AST walker only permits whitelisted node types. `__import__('os').system('rm -rf /')` is rejected at parse time.
 
 
-![Alt text](./images/landing_page.png)
-![Alt text](./images/input_field.png)
-![Alt text](./images/tool_using.png)
-![Alt text](./images/qa.png)
-![Alt text](./images/metadata.png)
-![Alt text](./images/calling_web_tool.png)
-![Alt text](./images/web_result.png)
-![Alt text](./images/follow-up.png)
 
 
 
 
 
-
+**Note**
+![alt text](image.png)
+![alt text](image-1.png)
